@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Dominance Portfolio | PROVEN RESULTS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --bg-color: #010101;
+            --card-gradient: linear-gradient(145deg, #1d2130, #0a0c12);
+            --accent-color: #3b82f6;
+            --success-color: #10b981;
+            --text-main: #ffffff;
+            --text-dim: #94a3b8;
+            --card-border: 1px solid rgba(255, 255, 255, 0.08);
+            --glossy-overlay: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .result-grid-section {
+            margin-bottom: 100px;
+        }
+        
+        .result-title {
+            text-align: center;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        .result-cards-wrapper {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .result-card {
+            background-image: var(--card-gradient);
+            border: var(--card-border);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .result-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+
+        .result-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--glossy-overlay);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .result-card-logo-container {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .result-card-logo-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .result-card-kpi {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--success-color);
+            margin-bottom: 5px;
+        }
+
+        .result-card-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #eee;
+            margin-bottom: 10px;
+        }
+
+        .result-card-description {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .case-study-title-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .case-study-title-section h2 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+        }
+
+        .case-study-block {
+            background-color: #090b10;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .brand-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .brand-logo-small {
+            width: 50px;
+            height: 50px;
+        }
+
+        .brand-logo-small img {
+            width: 100%; height: 100%; object-fit: contain;
+        }
+
+        .brand-text h3 {
+            font-size: 1.8rem;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+
+        .domain-url {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        .achievement-callout {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 3px solid var(--success-color);
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+
+        .achievement-title {
+            font-weight: 600;
+            color: #eee;
+        }
+
+        .achievement-detail {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        .metadata-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .metadata-item {
+            background: #141824;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .metadata-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--success-color);
+        }
+
+        .metadata-label {
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
+
+        .tactic-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tactic-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .tactic-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .screenshot-frame {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #000;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-frame:hover {
+            transform: scale(1.03);
+        }
+
+        .screenshot-frame img {
+            width: 100%;
+            display: block;
+            opacity: 0.95;
+        }
+
+        .badge {
+            background: #1e293b;
+            color: var(--text-dim);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+        }
+
+        .full-report-section {
+            background: #090b10;
+            border-radius: 20px;
+            padding: 50px;
+            margin: 80px 0 50px 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .report-header h2 {
+            font-size: 2.5rem;
+            color: #1a4a7a; /* Photo'r moto dark blue-ish shade */
+            margin: 0 0 20px 0;
+            font-weight: 600;
+        }
+
+        /* HATIL Style Metadata List */
+        .hatil-style-meta {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+        }
+
+        .hatil-style-meta li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .hatil-style-meta li i {
+            width: 20px;
+            color: #3b82f6; /* Icon color matching the theme */
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .report-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .report-sub-title {
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+
+        .image-placeholder-block {
+            width: 100%;
+            background: #141824;
+            border: 1px dashed rgba(255,255,255,0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444;
+            min-height: 200px;
+            margin: 20px 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .image-placeholder-block:hover {
+            border-color: var(--accent-color);
+            background: #1a1f2e;
+            transform: scale(1.01);
+        }
+
+        .image-placeholder-block img { width: 100%; height: auto; display: block; }
+
+        @media (max-width: 1024px) {
+            .result-cards-wrapper { grid-template-columns: repeat(3, 1fr); }
+            .case-study-block, .report-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>PROVEN SEO RESULTS</h1>
+        <p>Strategic Search Engine Optimization & Keyword Dominance that Drives Exponential Revenue Growth.</p>
+    </header>
+
+    <section class="result-grid-section">
+        <h2 class="result-title">Earning Accolades For:</h2>
+        <div class="result-cards-wrapper">
+            <div class="result-card">
+                <div class="result-card-logo-container"><img src="wz-logo.jpg" alt="Watch Zone"></div>
+                <div><div class="result-card-kpi">22K+</div><div class="result-card-title">Organic Growth</div></div>
+                <div class="result-card-description">Dominated Bangladeshi market with 14 Position #1 rankings.</div>
+            </div>
+            <div class="result-card">
+                <div class="result-card-logo-container"><img src="tri-logo.jpg" alt="Trimatrik"></div>
+                <div><div class="result-card-kpi">395K+</div><div class="result-card-title">Link Profile</div></div>
+                <div class="result-card-description">High commercial intent rank boost for security niche.</div>
+            </div>
+            <div class="result-card">
+                <div class="result-card-logo-container"><img src="avb-logo.webp" alt="Autoverhuur"></div>
+                <div><div class="result-card-kpi">Pos #1</div><div class="result-card-title">Market Dominance</div></div>
+                <div class="result-card-description">Clean sweep of top positions in Dutch rental market.</div>
+            </div>
+            <div class="result-card">
+                <div class="result-card-logo-container"><img src="hcc-logo.jpg" alt="Hearing Care"></div>
+                <div><div class="result-card-kpi">100%</div><div class="result-card-title">Intent Capture</div></div>
+                <div class="result-card-description">Achieved #1 position for key commercial medical terms.</div>
+            </div>
+            <div class="result-card">
+                <div class="result-card-logo-container"><img src="ut-logo.png" alt="United Trailers"></div>
+                <div><div class="result-card-kpi">Loc #1</div><div class="result-card-title">Local Authority</div></div>
+                <div class="result-card-description">Dominating local SEO for manufacturing in Sydney.</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="case-study-title-section"><h2>Detailed Case Studies</h2></div>
+
+        <div class="case-study-block">
+            <div class="block-content">
+                <div class="brand-header">
+                    <div class="brand-logo-small"><img src="wz-logo.jpg" alt="WATCH ZONE"></div>
+                    <div class="brand-text"><h3>WATCH ZONE</h3></div>
+                    <span class="badge">E-commerce BD</span>
+                </div>
+                <a href="https://watchzonebd.com" class="domain-url">watchzonebd.com</a>
+                <div class="achievement-callout">
+                    <div class="achievement-title">Market Dominance Achieved</div>
+                    <div class="achievement-detail">Dominating the luxury watch industry in Bangladesh with 14 Position #1 rankings.</div>
+                </div>
+                <div class="metadata-grid">
+                    <div class="metadata-item"><span class="metadata-value">85%</span><span class="metadata-label">Keywords Ranking</span></div>
+                    <div class="metadata-item"><span class="metadata-value">152%</span><span class="metadata-label">Organic Growth</span></div>
+                </div>
+                <h3>The Strategy:</h3>
+                <ul class="tactic-list">
+                    <li>Semantic content optimization for "watch shop" terms.</li>
+                    <li>Technical SEO audit & site speed enhancement.</li>
+                </ul>
+            </div>
+            <div class="block-visual">
+                <div class="screenshot-frame"><img src="wz-data.png" alt="Wz Data 1"></div>
+                <div class="screenshot-frame"><img src="wz-data (2).png" alt="Wz Data 2"></div>
+            </div>
+        </div>
+
+        <div class="case-study-block">
+            <div class="block-content">
+                <div class="brand-header">
+                    <div class="brand-logo-small"><img src="tri-logo.jpg" alt="TRIMATRIK"></div>
+                    <div class="brand-text"><h3>TRIMATRIK</h3></div>
+                    <span class="badge">Security Niche BD</span>
+                </div>
+                <a href="https://trimatrikbd.com" class="domain-url">trimatrikbd.com</a>
+                <div class="achievement-callout">
+                    <div class="achievement-title">High Commercial Authority</div>
+                    <div class="achievement-detail">Achieved top spots for competitive commercial terms, driving sales.</div>
+                </div>
+                <div class="metadata-grid">
+                    <div class="metadata-item"><span class="metadata-value">78%</span><span class="metadata-label">Keywords Ranking</span></div>
+                    <div class="metadata-item"><span class="metadata-value">135%</span><span class="metadata-label">Organic Growth</span></div>
+                </div>
+                <h3>Ranking Boosted For:</h3>
+                <ul class="tactic-list">
+                    <li>*Hikvision camera price* (#2)</li>
+                    <li>*Motion sensor* (#3)</li>
+                </ul>
+            </div>
+            <div class="block-visual">
+                <div class="screenshot-frame"><img src="tri-data.png" alt="Tri Data 1"></div>
+                <div class="screenshot-frame"><img src="tri-data (2).png" alt="Tri Data 2"></div>
+            </div>
+        </div>
+
+        <div class="case-study-block">
+            <div class="block-content">
+                <div class="brand-header">
+                    <div class="brand-logo-small"><img src="avb-logo.webp" alt="Autoverhuur"></div>
+                    <div class="brand-text"><h3>Autoverhuur</h3></div>
+                    <span class="badge">Europe / Rental</span>
+                </div>
+                <a href="https://autoverhuurbenelux.nl" class="domain-url">autoverhuurbenelux.nl</a>
+                <div class="achievement-callout">
+                    <div class="achievement-title">Position #1 Domination (NL)</div>
+                    <div class="achievement-detail">Complete SERP domination for core business queries in the Netherlands.</div>
+                </div>
+                <div class="metadata-grid">
+                    <div class="metadata-item"><span class="metadata-value">94%</span><span class="metadata-label">Keywords Ranking</span></div>
+                    <div class="metadata-item"><span class="metadata-value">280%</span><span class="metadata-label">Organic Growth</span></div>
+                </div>
+                <h3>Key Tactic: Local Authority Building</h3>
+                <ul class="tactic-list">
+                    <li>Optimized landing pages for Rotterdam & Hoeksche.</li>
+                </ul>
+            </div>
+            <div class="block-visual">
+                <div class="screenshot-frame"><img src="avb-data.png" alt="AV Data 1"></div>
+                <div class="screenshot-frame"><img src="avb-data (2).png" alt="AV Data 2"></div>
+            </div>
+        </div>
+
+        <div class="case-study-block">
+            <div class="block-content">
+                <div class="brand-header">
+                    <div class="brand-logo-small"><img src="ut-logo.png" alt="UNITED TRAILERS"></div>
+                    <div class="brand-text"><h3>UNITED TRAILERS</h3></div>
+                    <span class="badge">Manufacturing AU</span>
+                </div>
+                <a href="https://www.unitedtrailers.com.au/" class="domain-url">unitedtrailers.com.au</a>
+                <div class="achievement-callout">
+                    <div class="achievement-title">Sydney Local Dominance</div>
+                    <div class="achievement-detail">Established high authority in the Australian manufacturing sector.</div>
+                </div>
+                <div class="metadata-grid">
+                    <div class="metadata-item"><span class="metadata-value">72%</span><span class="metadata-label">Keywords Ranking</span></div>
+                    <div class="metadata-item"><span class="metadata-value">114%</span><span class="metadata-label">Organic Growth</span></div>
+                </div>
+            </div>
+            <div class="block-visual">
+                <div class="screenshot-frame"><img src="ut-data.png" alt="UT Data 1"></div>
+                <div class="screenshot-frame"><img src="ut-data (2).png" alt="UT Data 2"></div>
+            </div>
+        </div>
+
+        <div class="full-report-section">
+            <div class="report-header">
+                <h2>Case Study: United Trailers Australia</h2>
+            </div>
+
+            <ul class="hatil-style-meta">
+                <li><i class="fa-solid fa-rotate-left"></i> Project Duration: 10 months</li>
+                <li><i class="fa-solid fa-globe"></i> Website: unitedtrailers.com.au</li>
+                <li><i class="fa-solid fa-chess-king"></i> Total Keywords: 1.1k keyword</li>
+                <li><i class="fa-brands fa-google"></i> Google 1st Page Rank: 499 keyword</li>
+                <li><i class="fa-solid fa-rocket"></i> Organic Growth: 114%</li>
+            </ul>
+
+            <div class="report-grid">
+                <div class="column">
+                    <h3 class="report-sub-title">1. Project Overview</h3>
+                    <p style="color: white(--text-dim);">The Australian trailer manufacturing industry is one of the most competitive niches, dominated by long-standing giants. United Trailers Australia partnered with us to break through the market saturation, eliminate dependency on branded searches, and establish themselves as the #1 authority for high-intent transactional keywords.</p>
+                    
+                    <div class="image-placeholder-block">
+                        <img src="project-overview-visual.png" alt="Project Overview Visual">
+                    </div>
+
+                    <h3 class="report-sub-title">2. The Challenges (Identifying the Barriers)</h3>
+                    <ul class="tactic-list">
+                        <li><strong>Hyper-Competitive Landscape:</strong> Market crowded with legacy brands.</li>
+                        <li><strong>The Branded Search Trap:</strong> Over 80% traffic from brand name searches only.</li>
+                        <li><strong>Technical Bottlenecks:</strong> Slow indexation and lack of structured data.</li>
+                        <li><strong>Missing AI Presence:</strong> Zero citations in ChatGPT/Gemini recommendations.</li>
+                    </ul>
+
+                    <h3 class="report-sub-title">3. Initial Assessment & Strategic Planning</h3>
+                    <p style="color: var(--text-dim);">Before execution, we performed a deep-dive analysis:</p>
+                    <ul class="tactic-list">
+                        <li><strong>Deep Technical Audit:</strong> Fixed crawl errors and Schema gaps.</li>
+                        <li><strong>Competitor Intelligence:</strong> Found "keyword gaps" in distributor profiles.</li>
+                        <li><strong>Keyword Mapping:</strong> Focused on Transactional Intent Keywords.</li>
+                    </ul>
+                    
+                    <div class="image-placeholder-block">
+                        <img src="strategic-planning-data.png" alt="Strategic Planning Visualization">
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3 class="report-sub-title">4. Implementation: Our Step-by-Step Execution</h3>
+                    <ul class="tactic-list">
+                        <li><strong>A. Transactional On-Page Optimization:</strong> Overhauled H1-H3 for every category.</li>
+                        <li><strong>B. Technical SEO Excellence:</strong> Improved site speed and mobile stability.</li>
+                        <li><strong>C. AI Search & Citation Building (AEO):</strong> Secured 38+ citations across LLMs.</li>
+                        <li><strong>D. High-Authority Link Acquisition:</strong> Built 585+ manual niche backlinks.</li>
+                    </ul>
+
+                    <h3 class="report-sub-title">5. The Results (The Growth Story)</h3>
+                    <ul class="tactic-list">
+                        <li><strong>114% Surge in Organic Visibility.</strong></li>
+                        <li><strong>Keyword Portfolio Growth:</strong> Scaled to 1,286 active keywords.</li>
+                        <li><strong>Non-Branded Mastery:</strong> 37.51% growth in generic traffic.</li>
+                     
+                    <div class="image-placeholder-block">
+                    <img src="results-growth-story.png" alt="Results Growth Story">
+                    </div>
+                    
+                    </ul>
+
+                    <h3 class="report-sub-title">6. Keyword Distribution & Search Visibility</h3>
+                    <ul class="tactic-list">
+                        <li><strong>Top 3 Rankings:</strong> 81 Keywords.</li>
+                        <li><strong>Top 10 Rankings:</strong> 167 Keywords.</li>
+                    </ul>
+                    
+                    <div class="image-placeholder-block">
+                        <img src="keyword-distribution-chart.png" alt="Keyword Distribution Chart">
+                    </div>
+
+                    <h3 class="report-sub-title">7. Final Verdict</h3>
+                    <p style="color: var(--text-dim);">United Trailers Australia is now not just a manufacturer; they are a digital powerhouse in the Australian automotive market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
